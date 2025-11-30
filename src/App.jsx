@@ -68,7 +68,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/TP-Repair">
       <AuthProvider>
         <AppContent />
       </AuthProvider>
