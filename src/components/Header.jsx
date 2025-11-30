@@ -56,7 +56,7 @@ const Header = ({ onMenuClick, isMenuOpen }) => {
                         onClick={() => navigate('/')}
                     >
                         <img
-                            src="./assets/taweethapisek logo.png"
+                            src="./assets/taweethapisek-logo.png"
                             alt="Logo"
                             className="h-10 w-auto mr-3"
                         />
