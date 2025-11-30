@@ -30,7 +30,7 @@ const LoginPage = () => {
                 <div className="text-center mb-8">
                     <div className="flex justify-center mb-4">
                         <img
-                            src="./assets/taweethapisek-logo.png"
+                            src={`${import.meta.env.BASE_URL}assets/taweethapisek-logo.png`}
                             alt="Logo"
                             className="h-20 w-auto"
                         />
