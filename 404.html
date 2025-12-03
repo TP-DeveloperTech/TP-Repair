@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-        // Redirect to the same path with a hash
-        // Example: /TP-Repair/report -> /TP-Repair/#/report
+        // Get the current path
         var path = window.location.pathname;
         var repo = '/TP-Repair';
+        var basePath = repo;
 
         // Remove repo name from path if present
         if (path.startsWith(repo)) {
@@ -20,9 +20,22 @@
             path = '/' + path;
         }
 
-        // Redirect to the hash version
-        // If path is just /, it will go to /#/ which is fine
-        window.location.replace(repo + '/#' + path + window.location.search);
+        // Remove trailing slash except for root
+        if (path !== '/' && path.endsWith('/')) {
+            path = path.slice(0, -1);
+        }
+
+        // Build the redirect URL with hash for HashRouter
+        var redirectUrl = basePath + '/#' + path;
+        
+        // Add search params if present
+        if (window.location.search) {
+            redirectUrl += window.location.search;
+        }
+
+        // Redirect to hash version for client-side routing
+        // Example: /TP-Repair/login -> /TP-Repair/#/login
+        window.location.replace(redirectUrl);
     </script>
 </head>
 
