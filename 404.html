@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        // Redirect to the same path with a hash
+        // Example: /TP-Repair/report -> /TP-Repair/#/report
+        var path = window.location.pathname;
+        var repo = '/TP-Repair';
+
+        // Remove repo name from path if present
+        if (path.startsWith(repo)) {
+            path = path.substring(repo.length);
+        }
+
+        // Ensure path starts with /
+        if (!path.startsWith('/')) {
+            path = '/' + path;
+        }
+
+        // Redirect to the hash version
+        // If path is just /, it will go to /#/ which is fine
+        window.location.replace(repo + '/#' + path + window.location.search);
+    </script>
+</head>
+
+<body>
+    <p>Redirecting...</p>
+</body>
+
+</html>
