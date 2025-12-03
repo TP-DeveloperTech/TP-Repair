@@ -4,8 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   base: '/TP-Repair/',
-  plugins: [react()],
-  build: {
-    outDir: 'docs'
-  }
+  plugins: [react()]
 })

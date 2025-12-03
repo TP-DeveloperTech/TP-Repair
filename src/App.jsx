@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -68,7 +68,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router basename="/TP-Repair">
+    <Router>
       <AuthProvider>
         <AppContent />
       </AuthProvider>
